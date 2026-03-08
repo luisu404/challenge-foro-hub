@@ -2,7 +2,7 @@ package com.luisu404.challenge_forohub.service;
 
 
 import com.luisu404.challenge_forohub.domain.respuesta.Respuesta;
-import com.luisu404.challenge_forohub.domain.respuesta.dto.DatosCrearRespuestaTopico;
+import com.luisu404.challenge_forohub.domain.respuesta.dto.DatosAgregarRespuestaTopico;
 import com.luisu404.challenge_forohub.repository.RespuestaRepository;
 import com.luisu404.challenge_forohub.repository.TopicoRepository;
 import com.luisu404.challenge_forohub.repository.UsuarioRepository;
@@ -25,7 +25,7 @@ public class RespuestaService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Respuesta crearRespuesta(DatosCrearRespuestaTopico datos){
+    public Respuesta crearRespuesta(DatosAgregarRespuestaTopico datos){
 
         var usuario = usuarioRepository.findById(datos.usuarioId()).orElseThrow();
         var topico = topicoRepository.findById(datos.topicoId()).orElseThrow();

@@ -3,7 +3,7 @@ package com.luisu404.challenge_forohub.domain.respuesta.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record DatosCrearRespuestaTopico(
+public record DatosAgregarRespuestaTopico(
         @NotBlank
         String mensaje,
 
