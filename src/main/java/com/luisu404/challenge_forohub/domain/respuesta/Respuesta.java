@@ -7,10 +7,9 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "Respuesta")
 @Table(name = "respuestas")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -30,6 +29,6 @@ public class Respuesta {
     private Topico topico;
 
     @ManyToOne
-    @JoinColumn(name = "autor_id")
-    private Usuario autor;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }

@@ -1,19 +1,15 @@
 package com.luisu404.challenge_forohub.domain.topico.dto;
 
-import com.luisu404.challenge_forohub.domain.curso.Curso;
 import com.luisu404.challenge_forohub.domain.topico.StatusTopico;
-import com.luisu404.challenge_forohub.domain.topico.Topico;
-import com.luisu404.challenge_forohub.domain.usuario.Usuario;
+import com.luisu404.challenge_forohub.domain.usuario.dto.DatosActualizarUsuario;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDateTime;
-
-public record DatosRegistroTopico(
+public record DatosActualizarTopico(
+        @NotNull Long id,
         @NotBlank String titulo,
         @NotBlank String mensaje,
-        @NotNull Long usuarioId,
-        @NotNull Long cursoId,
         StatusTopico status
 ) {
 
