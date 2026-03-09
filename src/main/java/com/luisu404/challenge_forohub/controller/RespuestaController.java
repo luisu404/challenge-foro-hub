@@ -19,15 +19,4 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/api/respuestas")
 public class RespuestaController {
 
-    @Autowired private RespuestaRepository  respuestaRepository;
-
-
-    @Transactional
-    @PostMapping
-    public ResponseEntity registrar(@RequestBody @Valid DatosRegistroRespuesta respuestaDTO, UriComponentsBuilder uriComponentsBuilder){
-        var respuesta = new Respuesta(respuestaDTO);
-        respuestaRepository.save(respuesta);
-        var uri = uriComponentsBuilder.path("api/respuestas/{id}").buildAndExpand(respuesta.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DatosDetalleRespuesta(respuesta));
-    }
 }
